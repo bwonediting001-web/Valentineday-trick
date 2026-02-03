@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Proposal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6e6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: #d63384;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 1.2em;
+            margin: 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #yesBtn {
+            background-color: #ff69b4;
+            color: white;
+        }
+        #noBtn {
+            background-color: #ccc;
+            color: black;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Nitu 😇</h1>
+    <h2>Will you be my Valentine?</h2>
+
+    <button id="yesBtn">Yes ❤️</button>
+    <button id="noBtn">No 💔</button>
+
+    <script>
+        const noBtn = document.getElementById("noBtn");
+        const yesBtn = document.getElementById("yesBtn");
+
+        let yesSize = 1.2;
+
+        function moveNoBtn() {
+            const x = Math.random() * (window.innerWidth - 120);
+            const y = Math.random() * (window.innerHeight - 120);
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+
+            // Increase YES button size
+            yesSize += 0.2;
+            yesBtn.style.transform = `scale(${yesSize})`;
+        }
+
+        noBtn.addEventListener("mouseover", moveNoBtn);
+        noBtn.addEventListener("click", moveNoBtn);
+
+        yesBtn.addEventListener("click", () => {
+            window.location.href = "yes.html";
+        });
+    </script>
+
+</body>
+</html>
